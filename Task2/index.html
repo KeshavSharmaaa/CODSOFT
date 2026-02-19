@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EcoSphere - Sustainable Future</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Scroll Progress Bar -->
+<div class="progress-bar"></div>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <div class="logo">EcoSphere 🌿</div>
+    <ul>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#impact">Impact</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#newsletter">Subscribe</a></li>
+    </ul>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Designing a Greener Tomorrow</h1>
+        <p>Sustainable products crafted for conscious living.</p>
+        <button class="cta-btn">Explore Now</button>
+    </div>
+</section>
+
+<!-- Products -->
+<section id="products" class="section">
+    <h2>Featured Products</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Bamboo Bottle</h3>
+            <p>Reusable. Biodegradable. Stylish.</p>
+        </div>
+        <div class="card">
+            <h3>Organic Tote</h3>
+            <p>Plastic-free everyday carry.</p>
+        </div>
+        <div class="card">
+            <h3>Eco Toothbrush</h3>
+            <p>Zero waste oral care.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Impact Stats -->
+<section id="impact" class="impact">
+    <div class="stat">
+        <h3>10K+</h3>
+        <p>Plastic Bottles Saved</p>
+    </div>
+    <div class="stat">
+        <h3>5K+</h3>
+        <p>Trees Planted</p>
+    </div>
+    <div class="stat">
+        <h3>20K+</h3>
+        <p>Happy Customers</p>
+    </div>
+</section>
+
+<!-- Why Choose Us -->
+<section id="why" class="section alt">
+    <h2>Why Choose EcoSphere?</h2>
+    <div class="why-grid">
+        <div class="why-box">🌱 100% Sustainable Materials</div>
+        <div class="why-box">♻ Zero Waste Packaging</div>
+        <div class="why-box">🌍 Carbon Neutral Shipping</div>
+    </div>
+</section>
+
+<!-- Newsletter -->
+<section id="newsletter" class="newsletter">
+    <h2>Join Our Green Movement</h2>
+    <div class="form">
+        <input type="email" placeholder="Enter your email">
+        <button>Subscribe</button>
+    </div>
+</section>
+
+<footer>
+    © 2026 EcoSphere. Built for a sustainable world.
+</footer>
+
+<script>
+    // Scroll Progress
+    window.onscroll = function () {
+        let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        let scrolled = (winScroll / height) * 100;
+        document.querySelector(".progress-bar").style.width = scrolled + "%";
+    };
+</script>
+
+</body>
+</html>
