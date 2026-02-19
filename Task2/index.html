@@ -1,102 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>EcoSphere - Sustainable Future</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EcoSphere</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Scroll Progress Bar -->
-<div class="progress-bar"></div>
-
-<!-- Navbar -->
 <nav class="navbar">
     <div class="logo">EcoSphere 🌿</div>
     <ul>
+        <li><a href="#about">About</a></li>
         <li><a href="#products">Products</a></li>
         <li><a href="#impact">Impact</a></li>
-        <li><a href="#why">Why Us</a></li>
-        <li><a href="#newsletter">Subscribe</a></li>
+        <li><a href="#contact">Contact</a></li>
     </ul>
 </nav>
 
-<!-- Hero Section -->
-<section class="hero">
-    <div class="hero-content">
-        <h1>Designing a Greener Tomorrow</h1>
-        <p>Sustainable products crafted for conscious living.</p>
-        <button class="cta-btn">Explore Now</button>
+<section class="hero" id="hero">
+    <div class="hero-bg" id="heroBg"></div>
+    <div class="hero-content" id="heroContent">
+        <h1>Redefining Sustainable Living</h1>
+        <p>
+            Premium eco-friendly products crafted to reduce waste,
+            conserve resources and inspire responsible living.
+        </p>
+        <a href="#about" class="btn">Explore Our Mission</a>
     </div>
 </section>
 
-<!-- Products -->
-<section id="products" class="section">
+<section id="about" class="section reveal">
+    <h2>Our Vision</h2>
+    <p>
+        At EcoSphere, we believe sustainability is not a trend —
+        it’s a responsibility. Every product is designed with
+        innovation, durability, and environmental balance in mind.
+    </p>
+</section>
+
+<section id="products" class="section alt reveal">
     <h2>Featured Products</h2>
     <div class="cards">
         <div class="card">
             <h3>Bamboo Bottle</h3>
-            <p>Reusable. Biodegradable. Stylish.</p>
+            <p>Reusable insulated bottle with biodegradable bamboo shell.</p>
         </div>
         <div class="card">
             <h3>Organic Tote</h3>
-            <p>Plastic-free everyday carry.</p>
+            <p>100% organic cotton bag designed for daily sustainable use.</p>
         </div>
         <div class="card">
             <h3>Eco Toothbrush</h3>
-            <p>Zero waste oral care.</p>
+            <p>Biodegradable handle for zero-waste oral care.</p>
         </div>
     </div>
 </section>
 
-<!-- Impact Stats -->
-<section id="impact" class="impact">
-    <div class="stat">
-        <h3>10K+</h3>
-        <p>Plastic Bottles Saved</p>
-    </div>
-    <div class="stat">
-        <h3>5K+</h3>
-        <p>Trees Planted</p>
-    </div>
-    <div class="stat">
-        <h3>20K+</h3>
-        <p>Happy Customers</p>
-    </div>
-</section>
-
-<!-- Why Choose Us -->
-<section id="why" class="section alt">
-    <h2>Why Choose EcoSphere?</h2>
-    <div class="why-grid">
-        <div class="why-box">🌱 100% Sustainable Materials</div>
-        <div class="why-box">♻ Zero Waste Packaging</div>
-        <div class="why-box">🌍 Carbon Neutral Shipping</div>
+<section id="impact" class="section reveal">
+    <h2>Environmental Impact</h2>
+    <div class="impact-grid">
+        <div class="impact-box">
+            <h3>15,000+</h3>
+            <p>Plastic Bottles Reduced</p>
+        </div>
+        <div class="impact-box">
+            <h3>8,200+</h3>
+            <p>Trees Planted</p>
+        </div>
+        <div class="impact-box">
+            <h3>25,000+</h3>
+            <p>Happy Customers</p>
+        </div>
     </div>
 </section>
 
-<!-- Newsletter -->
-<section id="newsletter" class="newsletter">
-    <h2>Join Our Green Movement</h2>
-    <div class="form">
+<section id="contact" class="section alt reveal">
+    <h2>Join the Movement</h2>
+    <div class="subscribe">
         <input type="email" placeholder="Enter your email">
-        <button>Subscribe</button>
+        <button class="btn">Subscribe</button>
     </div>
 </section>
 
 <footer>
-    © 2026 EcoSphere. Built for a sustainable world.
+    © 2026 EcoSphere. Sustainable by Design.
 </footer>
 
 <script>
-    // Scroll Progress
-    window.onscroll = function () {
-        let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        let scrolled = (winScroll / height) * 100;
-        document.querySelector(".progress-bar").style.width = scrolled + "%";
-    };
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute("href"))
+            .scrollIntoView({ behavior: "smooth" });
+    });
+});
+
+// Scroll reveal
+const reveals = document.querySelectorAll(".reveal");
+window.addEventListener("scroll", () => {
+    reveals.forEach((el) => {
+        const top = el.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) {
+            el.classList.add("active");
+        }
+    });
+});
+
+// HERO animation reset logic
+const heroBg = document.getElementById("heroBg");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY === 0) {
+        heroBg.classList.remove("zoomed");
+        void heroBg.offsetWidth;
+        heroBg.classList.add("zoomed");
+    } else {
+        heroBg.classList.remove("zoomed");
+    }
+});
+
+window.onload = () => {
+    heroBg.classList.add("zoomed");
+};
+
 </script>
 
 </body>
